@@ -10,6 +10,7 @@ class Item extends Component
     use HasId;
 
     public function __construct(
+        public ?string $title = null,
         public bool $open = false,
         public string $arrowStyle = 'default',
         ?string $id = null,

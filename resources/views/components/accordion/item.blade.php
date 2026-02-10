@@ -27,6 +27,12 @@
         'py-5 border-b border-gray-200 dark:border-gray-700' => $flush,
         'p-5 border border-t-0 border-gray-200 dark:border-gray-700 rounded-b-lg' => $separated && !$flush,
     ])>
-        {{ $slot }}
+        @if(isset($content))
+            {{ $content }}
+        @elseif(preg_match('/<[a-z][\s\S]*>/i', (string) $slot))
+            {{ $slot }}
+        @else
+            <p class="mb-2 text-gray-500 dark:text-gray-400">{{ $slot }}</p>
+        @endif
     </div>
 </div>

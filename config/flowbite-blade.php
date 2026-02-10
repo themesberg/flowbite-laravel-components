@@ -6,4 +6,6 @@ return [
     'default_color' => 'blue',
 
     'default_size' => 'md',
+
+    'layout' => 'admin',
 ];

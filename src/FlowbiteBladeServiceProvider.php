@@ -106,6 +106,11 @@ class FlowbiteBladeServiceProvider extends ServiceProvider
             'stepper' => Components\Stepper\Index::class,
             'stepper.item' => Components\Stepper\Item::class,
             'video' => Components\Video::class,
+
+            // Layouts
+            'layouts.admin' => Components\Layouts\Admin::class,
+            'layouts.auth' => Components\Layouts\Auth::class,
+            'layouts.settings' => Components\Layouts\Settings::class,
         ];
 
         foreach ($components as $alias => $class) {

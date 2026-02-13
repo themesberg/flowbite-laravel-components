@@ -19,6 +19,8 @@
     <script>
         if (localStorage.getItem('color-theme') === 'dark' || (!localStorage.getItem('color-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
         }
     </script>
 </head>
@@ -58,6 +60,9 @@
                             <span class="block text-sm text-gray-500 truncate dark:text-gray-400">{{ auth()->user()?->email }}</span>
                         </div>
                         <ul class="py-1" role="menu">
+                            <li>
+                                <a href="{{ url('/') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white">{{ __('Website') }}</a>
+                            </li>
                             <li>
                                 <a href="{{ route('profile.edit') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" wire:navigate>{{ __('Settings') }}</a>
                             </li>

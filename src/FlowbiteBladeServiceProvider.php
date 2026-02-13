@@ -116,5 +116,27 @@ class FlowbiteBladeServiceProvider extends ServiceProvider
         foreach ($components as $alias => $class) {
             Blade::component("{$prefix}.{$alias}", $class);
         }
+
+        $this->registerBlockComponents($prefix);
+    }
+
+    protected function registerBlockComponents(string $prefix): void
+    {
+        $blocksPath = __DIR__ . '/../resources/views/components/blocks';
+        $categories = ['marketing', 'application', 'ecommerce', 'publisher'];
+
+        foreach ($categories as $category) {
+            $categoryPath = $blocksPath . '/' . $category;
+            if (! is_dir($categoryPath)) {
+                continue;
+            }
+            foreach (glob($categoryPath . '/*.blade.php') as $file) {
+                $name = basename($file, '.blade.php');
+                Blade::component(
+                    "flowbite-blade::components.blocks.{$category}.{$name}",
+                    "{$prefix}.blocks.{$category}.{$name}"
+                );
+            }
+        }
     }
 }

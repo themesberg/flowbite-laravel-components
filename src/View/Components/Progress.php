@@ -10,20 +10,26 @@ class Progress extends Component
     public int $max;
     public string $color;
     public string $size;
-    public ?string $label;
+    public ?string $outsideLabel;
+    public ?string $outsideRightLabel;
+    public ?string $insideLabel;
 
     public function __construct(
         int|float $value = 0,
         int $max = 100,
         string $color = 'blue',
         string $size = 'md',
-        ?string $label = null,
+        ?string $outsideLabel = null,
+        ?string $outsideRightLabel = null,
+        ?string $insideLabel = null,
     ) {
         $this->value = $value;
         $this->max = $max;
         $this->color = $color;
-        $this->size = $size;
-        $this->label = $label;
+        $this->outsideLabel = $outsideLabel;
+        $this->outsideRightLabel = $outsideRightLabel;
+        $this->insideLabel = $insideLabel;
+        $this->size = $this->insideLabel && !in_array($size, ['lg', 'xl']) ? 'lg' : $size;
     }
 
     public function percentage(): float
@@ -42,7 +48,13 @@ class Progress extends Component
 
     public function barClasses(): string
     {
-        return $this->colorClasses() . ' ' . $this->sizeClasses() . ' rounded-full ' . $this->labelSizeClasses() . ' font-medium text-center p-0.5 leading-none text-white';
+        $base = $this->colorClasses() . ' ' . $this->sizeClasses() . ' rounded-full';
+
+        if ($this->insideLabel) {
+            return $base . ' ' . $this->labelSizeClasses() . ' font-medium text-white flex items-center justify-center';
+        }
+
+        return $base;
     }
 
     public function sizeClasses(): string

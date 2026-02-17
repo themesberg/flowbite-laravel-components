@@ -2,5 +2,5 @@
     @if($src)
         <img src="{{ $src }}" class="h-8" alt="{{ $alt }}" />
     @endif
-    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{{ $slot }}</span>
+    <span class="self-center text-2xl font-semibold whitespace-nowrap text-heading">{{ $slot }}</span>
 </a>

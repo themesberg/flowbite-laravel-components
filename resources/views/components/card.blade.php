@@ -1,14 +1,13 @@
 <{{ $resolvedTag() }}
     @if ($href) href="{{ $href }}" @endif
-    class="{{ $baseClasses() }}"
-    {{ $attributes }}
+    {{ $attributes->class([$baseClasses()]) }}
 >
     @if ($img && $imgPosition === 'top')
         <img class="{{ $imgClasses() }}" src="{{ $img }}" alt="{{ $imgAlt }}" />
     @endif
 
     @if ($header ?? false)
-        <div class="p-5 border-b border-gray-200 dark:border-gray-700">
+        <div class="p-5 border-b border-default">
             {{ $header }}
         </div>
     @endif
@@ -18,7 +17,7 @@
     </div>
 
     @if ($footer ?? false)
-        <div class="p-5 border-t border-gray-200 dark:border-gray-700">
+        <div class="p-5 border-t border-default">
             {{ $footer }}
         </div>
     @endif

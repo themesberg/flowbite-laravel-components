@@ -60,10 +60,10 @@ class Avatar extends Component
     public function statusClasses(): string
     {
         $colorClass = match ($this->status) {
-            'online' => 'bg-green-400',
+            'online' => 'bg-success',
             'offline' => 'bg-gray-400',
-            'busy' => 'bg-red-400',
-            'away' => 'bg-yellow-400',
+            'busy' => 'bg-danger',
+            'away' => 'bg-warning',
             default => 'bg-gray-400',
         };
 

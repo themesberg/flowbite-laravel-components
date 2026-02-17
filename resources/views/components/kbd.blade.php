@@ -1,5 +1,5 @@
 @if($arrow)
-<kbd class="inline-flex items-center {{ $sizeClasses }} font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500" {{ $attributes }}>{{ $slot }}</kbd>
+<kbd class="inline-flex items-center {{ $sizeClasses }} font-semibold text-heading bg-neutral-secondary-medium border border-default rounded-base" {{ $attributes }}>{{ $slot }}</kbd>
 @else
-<kbd class="{{ $sizeClasses }} font-semibold text-gray-800 bg-gray-100 border border-gray-200 rounded-lg dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500" {{ $attributes }}>{{ $slot }}</kbd>
+<kbd class="{{ $sizeClasses }} font-semibold text-heading bg-neutral-secondary-medium border border-default rounded-base" {{ $attributes }}>{{ $slot }}</kbd>
 @endif

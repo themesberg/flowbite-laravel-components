@@ -30,9 +30,9 @@ class Banner extends Component
             default => 'border-b',
         };
         $this->colorClasses = match($this->color) {
-            'dark' => 'bg-gray-700 dark:bg-gray-800 text-white',
-            'info' => 'bg-blue-50 dark:bg-blue-900 text-blue-800 dark:text-blue-200',
-            default => 'bg-gray-50 dark:bg-gray-700',
+            'dark' => 'bg-dark text-white',
+            'info' => 'bg-brand-softer text-fg-brand-strong',
+            default => 'bg-neutral-secondary-soft',
         };
     }
 

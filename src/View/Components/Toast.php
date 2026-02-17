@@ -21,14 +21,14 @@ class Toast extends Component
         $this->initializeHasId($id);
 
         $this->colorClasses = match ($this->color) {
-            'red' => 'text-red-500 bg-red-100 dark:bg-red-800 dark:text-red-200',
-            'green' => 'text-green-500 bg-green-100 dark:bg-green-800 dark:text-green-200',
-            'yellow' => 'text-yellow-500 bg-yellow-100 dark:bg-yellow-800 dark:text-yellow-200',
+            'red' => 'text-fg-danger-strong bg-danger-soft',
+            'green' => 'text-fg-success-strong bg-success-soft',
+            'yellow' => 'text-fg-warning bg-warning-soft',
             'purple' => 'text-purple-500 bg-purple-100 dark:bg-purple-800 dark:text-purple-200',
             'pink' => 'text-pink-500 bg-pink-100 dark:bg-pink-800 dark:text-pink-200',
             'indigo' => 'text-indigo-500 bg-indigo-100 dark:bg-indigo-800 dark:text-indigo-200',
-            'gray' => 'text-gray-500 bg-gray-100 dark:bg-gray-800 dark:text-gray-200',
-            default => 'text-blue-500 bg-blue-100 dark:bg-blue-800 dark:text-blue-200',
+            'gray' => 'text-heading bg-neutral-secondary-medium',
+            default => 'text-fg-brand-strong bg-brand-softer',
         };
 
         $this->positionClasses = match ($this->position) {

@@ -1,8 +1,8 @@
-<a href="{{ $href }}" class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group {{ $active ? 'text-blue-600 dark:text-blue-500' : '' }}" {{ $attributes }}>
+<a href="{{ $href }}" class="inline-flex flex-col items-center justify-center px-5 hover:bg-neutral-secondary-soft group {{ $active ? 'text-fg-brand-strong' : '' }}" {{ $attributes }}>
     @if($icon)
         {!! $icon !!}
     @endif
     @if($label)
-        <span class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">{{ $label }}</span>
+        <span class="text-sm text-body group-hover:text-fg-brand-strong">{{ $label }}</span>
     @endif
 </a>

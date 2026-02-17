@@ -31,8 +31,8 @@ class Select extends Component
             default => 'p-2.5 text-sm',
         };
         $this->selectClasses = $this->underline
-            ? 'block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer'
-            : 'bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ' . $this->sizeClasses . ' dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500';
+            ? 'block py-2.5 px-0 w-full text-sm text-body bg-transparent border-0 border-b-2 border-default appearance-none focus:outline-none focus:ring-0 focus:border-default peer'
+            : 'bg-neutral-secondary-soft border border-default-medium text-heading rounded-base focus:ring-brand-medium focus:border-brand block w-full ' . $this->sizeClasses;
     }
 
     public function render()

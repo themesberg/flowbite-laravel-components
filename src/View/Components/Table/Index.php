@@ -15,14 +15,14 @@ class Index extends Component
 
     public function tableClass(): string
     {
-        $classes = ['w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400'];
+        $classes = ['w-full text-sm text-left rtl:text-right text-body'];
 
         return implode(' ', $classes);
     }
 
     public function wrapperClass(): string
     {
-        $classes = ['relative overflow-x-auto sm:rounded-lg'];
+        $classes = ['relative overflow-x-auto sm:rounded-base'];
 
         if ($this->shadow) {
             $classes[] = 'shadow-md';

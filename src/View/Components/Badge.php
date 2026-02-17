@@ -37,6 +37,11 @@ class Badge extends Component
         $this->initializeHasId($id);
     }
 
+    public function baseClasses(): string
+    {
+        return 'font-medium inline-flex items-center ' . $this->sizeClasses() . ' ' . $this->colorClasses() . ' ' . $this->roundedClasses();
+    }
+
     public function sizeClasses(): string
     {
         if ($this->iconOnly) {
@@ -59,42 +64,42 @@ class Badge extends Component
         }
 
         return match ($this->color) {
-            'red' => 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300',
-            'green' => 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300',
-            'yellow' => 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300',
+            'red' => 'bg-danger-soft text-fg-danger-strong',
+            'green' => 'bg-success-soft text-fg-success-strong',
+            'yellow' => 'bg-warning-soft text-fg-warning',
             'purple' => 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-300',
             'pink' => 'bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-300',
             'indigo' => 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-300',
-            'gray', 'dark' => 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-300',
-            default => 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300',
+            'gray', 'dark' => 'bg-neutral-secondary-medium text-heading',
+            default => 'bg-brand-softer text-fg-brand-strong',
         };
     }
 
     protected function borderedColorClasses(): string
     {
         return match ($this->color) {
-            'red' => 'bg-red-100 text-red-800 border border-red-400 dark:bg-gray-700 dark:text-red-400',
-            'green' => 'bg-green-100 text-green-800 border border-green-400 dark:bg-gray-700 dark:text-green-400',
-            'yellow' => 'bg-yellow-100 text-yellow-800 border border-yellow-300 dark:bg-gray-700 dark:text-yellow-300',
+            'red' => 'bg-danger-soft text-fg-danger-strong border border-danger-subtle',
+            'green' => 'bg-success-soft text-fg-success-strong border border-success-subtle',
+            'yellow' => 'bg-warning-soft text-fg-warning border border-warning-subtle',
             'purple' => 'bg-purple-100 text-purple-800 border border-purple-400 dark:bg-gray-700 dark:text-purple-400',
             'pink' => 'bg-pink-100 text-pink-800 border border-pink-400 dark:bg-gray-700 dark:text-pink-400',
             'indigo' => 'bg-indigo-100 text-indigo-800 border border-indigo-400 dark:bg-gray-700 dark:text-indigo-400',
-            'gray', 'dark' => 'bg-gray-100 text-gray-800 border border-gray-500 dark:bg-gray-700 dark:text-gray-400',
-            default => 'bg-blue-100 text-blue-800 border border-blue-400 dark:bg-gray-700 dark:text-blue-400',
+            'gray', 'dark' => 'bg-neutral-secondary-medium text-heading border border-default-medium',
+            default => 'bg-brand-softer text-fg-brand-strong border border-brand-subtle',
         };
     }
 
     public function dismissButtonClasses(): string
     {
         return match ($this->color) {
-            'red' => 'text-red-400 hover:bg-red-200 hover:text-red-900 dark:hover:bg-red-800 dark:hover:text-red-300',
-            'green' => 'text-green-400 hover:bg-green-200 hover:text-green-900 dark:hover:bg-green-800 dark:hover:text-green-300',
-            'yellow' => 'text-yellow-400 hover:bg-yellow-200 hover:text-yellow-900 dark:hover:bg-yellow-800 dark:hover:text-yellow-300',
+            'red' => 'text-fg-danger-strong hover:bg-danger-medium',
+            'green' => 'text-fg-success-strong hover:bg-success-medium',
+            'yellow' => 'text-fg-warning hover:bg-warning-medium',
             'purple' => 'text-purple-400 hover:bg-purple-200 hover:text-purple-900 dark:hover:bg-purple-800 dark:hover:text-purple-300',
             'pink' => 'text-pink-400 hover:bg-pink-200 hover:text-pink-900 dark:hover:bg-pink-800 dark:hover:text-pink-300',
             'indigo' => 'text-indigo-400 hover:bg-indigo-200 hover:text-indigo-900 dark:hover:bg-indigo-800 dark:hover:text-indigo-300',
-            'gray', 'dark' => 'text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-300',
-            default => 'text-blue-400 hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300',
+            'gray', 'dark' => 'text-heading hover:bg-neutral-tertiary-medium',
+            default => 'text-fg-brand-strong hover:bg-brand-soft',
         };
     }
 

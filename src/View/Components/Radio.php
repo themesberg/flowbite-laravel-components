@@ -25,15 +25,15 @@ class Radio extends Component
     public function colorClasses(): string
     {
         return match ($this->color) {
-            'red' => 'text-red-600 focus:ring-red-500 dark:focus:ring-red-600',
-            'green' => 'text-green-600 focus:ring-green-500 dark:focus:ring-green-600',
+            'red' => 'text-danger focus:ring-danger-medium',
+            'green' => 'text-success focus:ring-success-medium',
             'purple' => 'text-purple-600 focus:ring-purple-500 dark:focus:ring-purple-600',
             'indigo' => 'text-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600',
             'pink' => 'text-pink-600 focus:ring-pink-500 dark:focus:ring-pink-600',
-            'yellow' => 'text-yellow-400 focus:ring-yellow-500 dark:focus:ring-yellow-600',
+            'yellow' => 'text-warning focus:ring-warning-medium',
             'teal' => 'text-teal-600 focus:ring-teal-500 dark:focus:ring-teal-600',
             'orange' => 'text-orange-500 focus:ring-orange-500 dark:focus:ring-orange-600',
-            default => 'text-blue-600 focus:ring-blue-500 dark:focus:ring-blue-600',
+            default => 'text-brand focus:ring-brand-medium',
         };
     }
 

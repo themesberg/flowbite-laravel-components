@@ -17,6 +17,11 @@ class Spinner extends Component
         $this->size = $size;
     }
 
+    public function baseClasses(): string
+    {
+        return 'animate-spin ' . $this->sizeClasses() . ' ' . $this->colorClasses();
+    }
+
     public function sizeClasses(): string
     {
         return match ($this->size) {
@@ -31,14 +36,14 @@ class Spinner extends Component
     public function colorClasses(): string
     {
         return match ($this->color) {
-            'red' => 'text-gray-200 fill-red-600 dark:text-gray-600',
-            'green' => 'text-gray-200 fill-green-600 dark:text-gray-600',
-            'yellow' => 'text-gray-200 fill-yellow-600 dark:text-gray-600',
-            'purple' => 'text-gray-200 fill-purple-600 dark:text-gray-600',
-            'pink' => 'text-gray-200 fill-pink-600 dark:text-gray-600',
-            'gray', 'dark' => 'text-gray-200 fill-gray-600 dark:text-gray-600',
-            'white' => 'text-gray-200 fill-white dark:text-gray-600',
-            default => 'text-gray-200 fill-blue-600 dark:text-gray-600',
+            'red' => 'text-neutral-tertiary fill-danger',
+            'green' => 'text-neutral-tertiary fill-success',
+            'yellow' => 'text-neutral-tertiary fill-warning',
+            'purple' => 'text-neutral-tertiary fill-purple-600',
+            'pink' => 'text-neutral-tertiary fill-pink-600',
+            'gray', 'dark' => 'text-neutral-tertiary fill-dark',
+            'white' => 'text-neutral-tertiary fill-white',
+            default => 'text-neutral-tertiary fill-brand',
         };
     }
 

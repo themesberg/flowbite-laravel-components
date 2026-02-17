@@ -50,15 +50,15 @@ class Indicator extends Component
     public function colorClasses(): string
     {
         return match ($this->color) {
-            'red' => 'bg-red-500',
-            'green' => 'bg-green-500',
-            'yellow' => 'bg-yellow-500',
+            'red' => 'bg-danger',
+            'green' => 'bg-success',
+            'yellow' => 'bg-warning',
             'purple' => 'bg-purple-500',
             'pink' => 'bg-pink-500',
             'indigo' => 'bg-indigo-500',
             'gray', 'dark' => 'bg-gray-500',
             'white' => 'bg-white',
-            default => 'bg-blue-500',
+            default => 'bg-brand',
         };
     }
 

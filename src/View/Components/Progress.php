@@ -35,6 +35,16 @@ class Progress extends Component
         return min(100, max(0, ($this->value / $this->max) * 100));
     }
 
+    public function containerClasses(): string
+    {
+        return 'w-full bg-neutral-quaternary rounded-full ' . $this->sizeClasses();
+    }
+
+    public function barClasses(): string
+    {
+        return $this->colorClasses() . ' ' . $this->sizeClasses() . ' rounded-full ' . $this->labelSizeClasses() . ' font-medium text-center p-0.5 leading-none text-white';
+    }
+
     public function sizeClasses(): string
     {
         return match ($this->size) {
@@ -49,13 +59,13 @@ class Progress extends Component
     public function colorClasses(): string
     {
         return match ($this->color) {
-            'red' => 'bg-red-600 dark:bg-red-500',
-            'green' => 'bg-green-600 dark:bg-green-500',
-            'yellow' => 'bg-yellow-600 dark:bg-yellow-500',
+            'red' => 'bg-danger',
+            'green' => 'bg-success',
+            'yellow' => 'bg-warning',
             'purple' => 'bg-purple-600 dark:bg-purple-500',
             'indigo' => 'bg-indigo-600 dark:bg-indigo-500',
-            'gray', 'dark' => 'bg-gray-600 dark:bg-gray-500',
-            default => 'bg-blue-600 dark:bg-blue-500',
+            'gray', 'dark' => 'bg-dark',
+            default => 'bg-brand',
         };
     }
 

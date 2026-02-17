@@ -13,14 +13,14 @@ class Row extends Component
 
     public function rowClass(): string
     {
-        $classes = ['bg-white border-b dark:bg-gray-800 dark:border-gray-700'];
+        $classes = ['bg-neutral-primary-soft border-b border-default'];
 
         if ($this->striped) {
-            $classes[] = 'odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800';
+            $classes[] = 'odd:bg-neutral-primary even:bg-neutral-secondary-soft';
         }
 
         if ($this->hoverable) {
-            $classes[] = 'hover:bg-gray-50 dark:hover:bg-gray-600';
+            $classes[] = 'hover:bg-neutral-secondary-medium';
         }
 
         return implode(' ', $classes);

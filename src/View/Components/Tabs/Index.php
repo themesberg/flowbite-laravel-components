@@ -24,10 +24,10 @@ class Index extends Component
     protected function resolveVariantClasses(): string
     {
         return match ($this->variant) {
-            'underline' => 'flex flex-wrap -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400',
-            'pills' => 'flex flex-wrap text-sm font-medium text-center text-gray-500 dark:text-gray-400',
-            'full' => 'flex flex-wrap text-sm font-medium text-center text-gray-500 divide-x divide-gray-200 rounded-lg shadow-sm dark:divide-gray-700 dark:text-gray-400',
-            default => 'flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400',
+            'underline' => 'flex flex-wrap -mb-px text-sm font-medium text-center text-body',
+            'pills' => 'flex flex-wrap text-sm font-medium text-center text-body',
+            'full' => 'flex flex-wrap text-sm font-medium text-center text-body divide-x divide-default rounded-base shadow-sm',
+            default => 'flex flex-wrap text-sm font-medium text-center text-body border-b border-default',
         };
     }
 

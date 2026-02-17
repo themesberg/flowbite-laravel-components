@@ -19,8 +19,8 @@ class Tooltip extends Component
     ) {
         $this->initializeHasId($id);
         $this->styleClasses = match ($this->style) {
-            'light' => 'bg-white text-gray-900 border border-gray-200 shadow-sm',
-            default => 'bg-gray-900 text-white dark:bg-gray-700',
+            'light' => 'bg-neutral-primary-soft text-heading border border-default shadow-sm',
+            default => 'bg-dark text-white',
         };
     }
 

@@ -28,14 +28,14 @@ class Card extends Component
 
     public function baseClasses(): string
     {
-        $classes = 'bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700';
+        $classes = 'bg-neutral-primary-soft border border-default rounded-base shadow-xs overflow-hidden';
 
         if ($this->horizontal) {
             $classes .= ' flex flex-col md:flex-row md:max-w-xl';
         }
 
         if ($this->href) {
-            $classes .= ' hover:shadow-lg transition-shadow';
+            $classes .= ' hover:shadow-sm transition-shadow';
         }
 
         return $classes;
@@ -44,12 +44,12 @@ class Card extends Component
     public function imgClasses(): string
     {
         if ($this->horizontal) {
-            return 'object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg';
+            return 'object-cover w-full rounded-t-base h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-base';
         }
 
         return match ($this->imgPosition) {
-            'bottom' => 'rounded-b-lg',
-            default => 'rounded-t-lg',
+            'bottom' => 'rounded-b-base',
+            default => 'rounded-t-base',
         };
     }
 

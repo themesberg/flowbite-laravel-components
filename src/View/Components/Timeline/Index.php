@@ -17,7 +17,7 @@ class Index extends Component
             return 'items-center sm:flex';
         }
 
-        return 'relative border-s border-gray-200 dark:border-gray-700';
+        return 'relative border-s border-default';
     }
 
     public function render()

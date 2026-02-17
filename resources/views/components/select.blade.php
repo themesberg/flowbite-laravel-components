@@ -1,6 +1,6 @@
 <div>
     @if($label)
-        <label for="{{ $id }}" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ $label }}</label>
+        <label for="{{ $id }}" class="block mb-2 text-sm font-medium text-heading">{{ $label }}</label>
     @endif
     <select id="{{ $id }}" class="{{ $selectClasses }}" {{ $disabled ? 'disabled' : '' }} {{ $required ? 'required' : '' }} {{ $multiple ? 'multiple' : '' }} {{ $attributes }}>
         @if($placeholder)
@@ -12,6 +12,6 @@
         {{ $slot }}
     </select>
     @if($helper)
-        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">{{ $helper }}</p>
+        <p class="mt-2 text-sm text-body">{{ $helper }}</p>
     @endif
 </div>

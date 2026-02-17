@@ -24,16 +24,16 @@ class Index extends Component
 
     protected function resolveNavClasses(): string
     {
-        $classes = 'bg-white dark:bg-gray-900';
+        $classes = 'bg-neutral-primary';
 
         if ($this->bordered) {
-            $classes .= ' border-gray-200 dark:border-gray-600 border-b';
+            $classes .= ' border-default border-b';
         } else {
-            $classes .= ' border-gray-200 dark:border-gray-600';
+            $classes .= ' border-default';
         }
 
         if ($this->rounded) {
-            $classes .= ' rounded-lg';
+            $classes .= ' rounded-base';
         }
 
         if ($this->sticky) {

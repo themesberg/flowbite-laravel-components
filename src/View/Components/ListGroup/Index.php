@@ -12,10 +12,10 @@ class Index extends Component
 
     public function listClass(): string
     {
-        $classes = ['w-48 text-sm font-medium text-gray-900 bg-white dark:bg-gray-700 dark:text-white'];
+        $classes = ['w-48 text-sm font-medium text-heading bg-neutral-primary-soft'];
 
         if ($this->bordered) {
-            $classes[] = 'border border-gray-200 rounded-lg dark:border-gray-600';
+            $classes[] = 'border border-default rounded-base';
         }
 
         return implode(' ', $classes);

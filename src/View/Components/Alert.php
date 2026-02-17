@@ -28,14 +28,19 @@ class Alert extends Component
         $this->initializeHasId($id);
     }
 
+    public function baseClasses(): string
+    {
+        return 'flex items-center p-4 mb-4 text-sm rounded-base ' . $this->colorClasses() . ' ' . $this->borderClasses();
+    }
+
     public function colorClasses(): string
     {
         return match ($this->color) {
-            'red' => 'text-red-800 bg-red-50 dark:bg-gray-800 dark:text-red-400',
-            'green' => 'text-green-800 bg-green-50 dark:bg-gray-800 dark:text-green-400',
-            'yellow' => 'text-yellow-800 bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300',
-            'gray', 'dark' => 'text-gray-800 bg-gray-50 dark:bg-gray-800 dark:text-gray-300',
-            default => 'text-blue-800 bg-blue-50 dark:bg-gray-800 dark:text-blue-400',
+            'red' => 'text-fg-danger-strong bg-danger-soft',
+            'green' => 'text-fg-success-strong bg-success-soft',
+            'yellow' => 'text-fg-warning bg-warning-soft',
+            'gray', 'dark' => 'text-heading bg-neutral-secondary-medium',
+            default => 'text-fg-brand-strong bg-brand-softer',
         };
     }
 
@@ -46,22 +51,22 @@ class Alert extends Component
         }
 
         return match ($this->color) {
-            'red' => 'border-t-4 border-red-300 dark:border-red-800',
-            'green' => 'border-t-4 border-green-300 dark:border-green-800',
-            'yellow' => 'border-t-4 border-yellow-300 dark:border-yellow-800',
-            'gray', 'dark' => 'border-t-4 border-gray-300 dark:border-gray-800',
-            default => 'border-t-4 border-blue-300 dark:border-blue-800',
+            'red' => 'border-t-4 border-danger-subtle',
+            'green' => 'border-t-4 border-success-subtle',
+            'yellow' => 'border-t-4 border-warning-subtle',
+            'gray', 'dark' => 'border-t-4 border-default-medium',
+            default => 'border-t-4 border-brand-subtle',
         };
     }
 
     public function dismissButtonClasses(): string
     {
         return match ($this->color) {
-            'red' => 'bg-red-50 text-red-500 focus:ring-red-400 hover:bg-red-200 dark:bg-gray-800 dark:text-red-400 dark:hover:bg-gray-700',
-            'green' => 'bg-green-50 text-green-500 focus:ring-green-400 hover:bg-green-200 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700',
-            'yellow' => 'bg-yellow-50 text-yellow-500 focus:ring-yellow-400 hover:bg-yellow-200 dark:bg-gray-800 dark:text-yellow-300 dark:hover:bg-gray-700',
-            'gray', 'dark' => 'bg-gray-50 text-gray-500 focus:ring-gray-400 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700',
-            default => 'bg-blue-50 text-blue-500 focus:ring-blue-400 hover:bg-blue-200 dark:bg-gray-800 dark:text-blue-400 dark:hover:bg-gray-700',
+            'red' => 'bg-danger-soft text-fg-danger-strong focus:ring-danger-medium hover:bg-danger-medium',
+            'green' => 'bg-success-soft text-fg-success-strong focus:ring-success-medium hover:bg-success-medium',
+            'yellow' => 'bg-warning-soft text-fg-warning focus:ring-warning-medium hover:bg-warning-medium',
+            'gray', 'dark' => 'bg-neutral-secondary-medium text-heading focus:ring-neutral-tertiary hover:bg-neutral-tertiary-medium',
+            default => 'bg-brand-softer text-fg-brand-strong focus:ring-brand-medium hover:bg-brand-soft',
         };
     }
 

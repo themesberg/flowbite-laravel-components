@@ -9,6 +9,7 @@ class Item extends Component
     public function __construct(
         public ?string $href = null,
         public ?string $icon = null,
+        public ?string $fwbIcon = null,
         public bool $active = false,
         public bool $disabled = false,
         public bool $button = false,

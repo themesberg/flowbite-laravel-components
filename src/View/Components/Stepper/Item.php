@@ -11,6 +11,7 @@ class Item extends Component
         public bool $current = false,
         public ?string $label = null,
         public ?string $description = null,
+        public ?string $fwbIcon = null,
     ) {}
 
     public function render()

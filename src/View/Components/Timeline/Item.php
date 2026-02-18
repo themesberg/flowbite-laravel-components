@@ -10,6 +10,7 @@ class Item extends Component
         public ?string $date = null,
         public ?string $title = null,
         public bool $horizontal = false,
+        public ?string $fwbIcon = null,
     ) {}
 
     public function itemClass(): string

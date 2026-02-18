@@ -13,6 +13,7 @@ class Item extends Component
         public bool $active = false,
         public bool $disabled = false,
         public string $variant = 'default',
+        public ?string $fwbIcon = null,
         ?string $id = null,
     ) {
         $this->initializeHasId($id);

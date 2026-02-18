@@ -14,6 +14,7 @@ class Toast extends Component
 
     public function __construct(
         public string $color = 'blue',
+        public ?string $fwbIcon = null,
         public bool $dismissible = true,
         public ?string $position = null,
         ?string $id = null,

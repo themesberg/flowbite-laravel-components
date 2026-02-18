@@ -11,6 +11,7 @@ class Group extends Component
 
     public function __construct(
         public string $label = '',
+        public ?string $fwbIcon = null,
         ?string $id = null,
     ) {
         $this->initializeHasId($id);

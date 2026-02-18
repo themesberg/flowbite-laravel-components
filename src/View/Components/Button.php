@@ -22,6 +22,7 @@ class Button extends Component
         bool $disabled = false,
         ?string $href = null,
         ?string $tag = null,
+        public ?string $fwbIcon = null,
     ) {
         $this->color = $color;
         $this->size = $size;

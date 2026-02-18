@@ -11,6 +11,7 @@ class Item extends Component
         public bool $active = false,
         public ?string $badge = null,
         public ?string $badgeColor = null,
+        public ?string $fwbIcon = null,
     ) {
         //
     }

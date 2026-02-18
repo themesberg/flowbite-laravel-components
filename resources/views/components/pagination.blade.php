@@ -8,14 +8,14 @@
             <div class="inline-flex mt-2 xs:mt-0">
                 <a href="{{ $paginator->previousPageUrl() }}" class="flex items-center justify-center px-3 h-8 text-sm font-medium text-white bg-dark rounded-s hover:bg-dark-strong {{ $paginator->onFirstPage() ? 'cursor-not-allowed opacity-50' : '' }}">
                     @if($icons)
-                        <svg class="w-3.5 h-3.5 me-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/></svg>
+                        <x-fwb-o-arrow-left class="w-3.5 h-3.5 me-2 rtl:rotate-180" />
                     @endif
                     {{ $previousLabel }}
                 </a>
                 <a href="{{ $paginator->nextPageUrl() }}" class="flex items-center justify-center px-3 h-8 text-sm font-medium text-white bg-dark border-0 border-s border-default rounded-e hover:bg-dark-strong {{ $paginator->hasMorePages() ? '' : 'cursor-not-allowed opacity-50' }}">
                     {{ $nextLabel }}
                     @if($icons)
-                        <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/></svg>
+                        <x-fwb-o-arrow-right class="w-3.5 h-3.5 ms-2 rtl:rotate-180" />
                     @endif
                 </a>
             </div>
@@ -24,14 +24,14 @@
         <div class="flex">
             <a href="{{ $paginator->previousPageUrl() }}" class="flex items-center justify-center px-3 h-8 text-sm font-medium text-body bg-neutral-primary-soft border border-default rounded-base hover:bg-neutral-secondary-medium hover:text-heading me-3 {{ $paginator->onFirstPage() ? 'cursor-not-allowed opacity-50' : '' }}">
                 @if($icons)
-                    <svg class="w-3.5 h-3.5 me-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0 4 4M1 5l4-4"/></svg>
+                    <x-fwb-o-arrow-left class="w-3.5 h-3.5 me-2 rtl:rotate-180" />
                 @endif
                 {{ $previousLabel }}
             </a>
             <a href="{{ $paginator->nextPageUrl() }}" class="flex items-center justify-center px-3 h-8 text-sm font-medium text-body bg-neutral-primary-soft border border-default rounded-base hover:bg-neutral-secondary-medium hover:text-heading {{ $paginator->hasMorePages() ? '' : 'cursor-not-allowed opacity-50' }}">
                 {{ $nextLabel }}
                 @if($icons)
-                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/></svg>
+                    <x-fwb-o-arrow-right class="w-3.5 h-3.5 ms-2 rtl:rotate-180" />
                 @endif
             </a>
         </div>
@@ -41,7 +41,7 @@
                 <a href="{{ $paginator->previousPageUrl() }}" class="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-body bg-neutral-primary-soft border border-e-0 border-default rounded-s-base hover:bg-neutral-secondary-medium hover:text-heading {{ $paginator->onFirstPage() ? 'cursor-not-allowed opacity-50' : '' }}">
                     @if($icons)
                         <span class="sr-only">Previous</span>
-                        <svg class="w-2.5 h-2.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/></svg>
+                        <x-fwb-o-chevron-left class="w-2.5 h-2.5 rtl:rotate-180" />
                     @else
                         {{ $previousLabel }}
                     @endif
@@ -56,7 +56,7 @@
                 <a href="{{ $paginator->nextPageUrl() }}" class="flex items-center justify-center px-3 h-8 leading-tight text-body bg-neutral-primary-soft border border-default rounded-e-base hover:bg-neutral-secondary-medium hover:text-heading {{ $paginator->hasMorePages() ? '' : 'cursor-not-allowed opacity-50' }}">
                     @if($icons)
                         <span class="sr-only">Next</span>
-                        <svg class="w-2.5 h-2.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/></svg>
+                        <x-fwb-o-chevron-right class="w-2.5 h-2.5 rtl:rotate-180" />
                     @else
                         {{ $nextLabel }}
                     @endif

@@ -14,14 +14,10 @@
                         $hasHalfStar = ((float)$averageRating - $fullStars) >= 0.5;
                     @endphp
                     @for($i = 0; $i < $fullStars; $i++)
-                        <svg class="h-4 w-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
-                        </svg>
+                        <x-fwb-s-star class="h-4 w-4 text-yellow-300" />
                     @endfor
                     @for($i = $fullStars + ($hasHalfStar ? 1 : 0); $i < 5; $i++)
-                        <svg class="h-4 w-4 text-gray-300 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
-                        </svg>
+                        <x-fwb-s-star class="h-4 w-4 text-gray-300 dark:text-gray-600" />
                     @endfor
                 </div>
                 <p class="text-sm font-medium leading-none text-gray-500 dark:text-gray-400">({{ $averageRating }})</p>
@@ -59,9 +55,7 @@
                     @foreach($ratings as $rating)
                         <div class="flex items-center gap-2">
                             <p class="w-2 shrink-0 text-start text-sm font-medium leading-none text-gray-900 dark:text-white">{{ $rating['stars'] }}</p>
-                            <svg class="h-4 w-4 shrink-0 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
-                            </svg>
+                            <x-fwb-s-star class="h-4 w-4 shrink-0 text-yellow-300" />
                             <div class="h-1.5 w-80 rounded-full bg-gray-200 dark:bg-gray-700">
                                 <div class="h-1.5 rounded-full bg-yellow-300" style="width: {{ $rating['width'] }}"></div>
                             </div>
@@ -79,9 +73,7 @@
                     <div class="shrink-0 space-y-2 sm:w-48 md:w-72">
                         <div class="flex items-center gap-0.5">
                             @for($i = 0; $i < 5; $i++)
-                                <svg class="h-4 w-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
-                                </svg>
+                                <x-fwb-s-star class="h-4 w-4 text-yellow-300" />
                             @endfor
                         </div>
                         <div class="space-y-0.5">
@@ -101,13 +93,9 @@
                     <div class="shrink-0 space-y-2 sm:w-48 md:w-72">
                         <div class="flex items-center gap-0.5">
                             @for($i = 0; $i < 4; $i++)
-                                <svg class="h-4 w-4 text-yellow-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
-                                </svg>
+                                <x-fwb-s-star class="h-4 w-4 text-yellow-300" />
                             @endfor
-                            <svg class="h-4 w-4 text-gray-300 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M13.849 4.22c-.684-1.626-3.014-1.626-3.698 0L8.397 8.387l-4.552.361c-1.775.14-2.495 2.331-1.142 3.477l3.468 2.937-1.06 4.392c-.413 1.713 1.472 3.067 2.992 2.149L12 19.35l3.897 2.354c1.52.918 3.405-.436 2.992-2.15l-1.06-4.39 3.468-2.938c1.353-1.146.633-3.336-1.142-3.477l-4.552-.36-1.754-4.17Z"/>
-                            </svg>
+                            <x-fwb-s-star class="h-4 w-4 text-gray-300 dark:text-gray-600" />
                         </div>
                         <div class="space-y-0.5">
                             <p class="text-base font-semibold text-gray-900 dark:text-white">Bonnie Green</p>

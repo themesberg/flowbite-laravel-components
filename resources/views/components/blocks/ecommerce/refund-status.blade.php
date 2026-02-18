@@ -32,14 +32,10 @@
                     {{-- Step 1 - Completed --}}
                     <li class="mb-10 ms-6">
                         <span class="absolute -start-2.5 flex h-5 w-5 items-center justify-center rounded-full bg-blue-100 ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900">
-                            <svg class="h-3 w-3 text-blue-800 dark:text-blue-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-                            </svg>
+                            <x-fwb-o-check class="h-3 w-3 text-blue-800 dark:text-blue-300" />
                         </span>
                         <span class="inline-flex items-center rounded bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-300">
-                            <svg class="me-1 h-3 w-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
-                            </svg>
+                            <x-fwb-o-clock class="me-1 h-3 w-3" />
                             02 February 2024
                         </span>
                         <h3 class="mb-0.5 mt-2 text-lg font-semibold text-blue-800 dark:text-blue-300">
@@ -53,9 +49,7 @@
                     {{-- Step 2 - Pending --}}
                     <li class="mb-10 ms-6">
                         <span class="absolute -start-2.5 flex h-5 w-5 items-center justify-center rounded-full bg-gray-100 ring-8 ring-white dark:bg-gray-800 dark:ring-gray-900">
-                            <svg class="h-3 w-3 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-                            </svg>
+                            <x-fwb-o-check class="h-3 w-3 text-gray-500 dark:text-gray-400" />
                         </span>
                         <h3 class="mb-1.5 text-lg font-semibold leading-none text-gray-900 dark:text-white">
                             Pick up product from the address
@@ -68,9 +62,7 @@
                     {{-- Step 3 - Pending --}}
                     <li class="mb-10 ms-6">
                         <span class="absolute -start-2.5 flex h-5 w-5 items-center justify-center rounded-full bg-gray-100 ring-8 ring-white dark:bg-gray-800 dark:ring-gray-900">
-                            <svg class="h-3 w-3 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-                            </svg>
+                            <x-fwb-o-check class="h-3 w-3 text-gray-500 dark:text-gray-400" />
                         </span>
                         <h3 class="mb-1.5 text-lg font-semibold leading-none text-gray-900 dark:text-white">
                             Product check
@@ -83,9 +75,7 @@
                     {{-- Step 4 - Pending --}}
                     <li class="ms-6">
                         <span class="absolute -start-2.5 flex h-5 w-5 items-center justify-center rounded-full bg-gray-100 ring-8 ring-white dark:bg-gray-800 dark:ring-gray-900">
-                            <svg class="h-3 w-3 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11.917 9.724 16.5 19 7.5"/>
-                            </svg>
+                            <x-fwb-o-check class="h-3 w-3 text-gray-500 dark:text-gray-400" />
                         </span>
                         <h3 class="mb-1.5 text-lg font-semibold leading-none text-gray-900 dark:text-white">
                             Refund the amount
@@ -104,15 +94,11 @@
             @else
                 <div class="sm:flex items-center sm:space-x-4 space-y-4 sm:space-y-0">
                     <a href="#" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:outline-none focus:ring-4 focus:ring-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white dark:focus:ring-gray-700" role="button">
-                        <svg class="h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
-                        </svg>
+                        <x-fwb-o-arrow-left class="h-5 w-5" />
                         Back to your account
                     </a>
                     <button type="button" class="w-full sm:w-auto flex justify-center items-center rounded-lg bg-red-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">
-                        <svg class="-ms-2 me-2 h-5 w-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/>
-                        </svg>
+                        <x-fwb-o-close class="-ms-2 me-2 h-5 w-5" />
                         Cancel the refund
                     </button>
                 </div>

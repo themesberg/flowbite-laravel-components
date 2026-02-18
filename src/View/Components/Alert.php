@@ -10,19 +10,17 @@ class Alert extends Component
     use HasId;
 
     public string $color;
-    public ?string $icon;
     public bool $dismissible;
     public bool $bordered;
 
     public function __construct(
         string $color = 'blue',
-        ?string $icon = null,
+        public ?string $fwbIcon = null,
         bool $dismissible = false,
         bool $bordered = false,
         ?string $id = null,
     ) {
         $this->color = $color;
-        $this->icon = $icon;
         $this->dismissible = $dismissible;
         $this->bordered = $bordered;
         $this->initializeHasId($id);

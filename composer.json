@@ -7,7 +7,8 @@
     "require": {
         "php": "^8.2",
         "illuminate/support": "^12.0",
-        "illuminate/view": "^12.0"
+        "illuminate/view": "^12.0",
+        "themesberg/flowbite-blade-icons": "^1.0"
     },
     "require-dev": {
         "orchestra/testbench": "^10.0",

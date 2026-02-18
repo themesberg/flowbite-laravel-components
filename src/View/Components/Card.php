@@ -18,6 +18,8 @@ class Card extends Component
         ?string $img = null,
         string $imgAlt = '',
         string $imgPosition = 'top',
+        public ?string $title = null,
+        public string $titleElement = 'span',
     ) {
         $this->href = $href;
         $this->horizontal = $horizontal;

@@ -13,7 +13,16 @@
     @endif
 
     <div class="p-5">
-        {{ $slot }}
+        @if($title)
+            <{{ $titleElement }} class="mb-2 text-2xl font-bold tracking-tight text-heading">{{ $title }}</{{ $titleElement }}>
+            @if(isset($content))
+                {{ $content }}
+            @else
+                <p class="font-normal text-body">{{ $slot }}</p>
+            @endif
+        @else
+            {{ $slot }}
+        @endif
     </div>
 
     @if ($footer ?? false)

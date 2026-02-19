@@ -1,6 +1,20 @@
 <div id="{{ $id }}" class="relative w-full" data-carousel="{{ $carouselType() }}" {{ $attributes }}>
     <div class="relative h-56 overflow-hidden rounded-base md:h-96">
-        {{ $slot }}
+        @if($items)
+            @foreach($items as $index => $item)
+                <div class="hidden {{ $duration }} {{ $easing }}" data-carousel-item="{{ $index === 0 ? 'active' : '' }}">
+                    @if(!empty($item['href']))
+                        <a href="{{ $item['href'] }}">
+                            <img src="{{ $item['img'] }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="{{ $item['alt'] ?? '' }}">
+                        </a>
+                    @else
+                        <img src="{{ $item['img'] }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="{{ $item['alt'] ?? '' }}">
+                    @endif
+                </div>
+            @endforeach
+        @else
+            {{ $slot }}
+        @endif
     </div>
     @if($indicators)
     <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">

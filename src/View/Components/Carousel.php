@@ -10,6 +10,7 @@ class Carousel extends Component
     use HasId;
 
     public function __construct(
+        public array $items = [],
         public bool $indicators = true,
         public bool $controls = true,
         public bool $slide = false,

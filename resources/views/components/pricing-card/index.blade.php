@@ -1,14 +1,14 @@
 <div {{ $attributes->class([$baseClasses()]) }}>
-    <h3 class="mb-4 text-2xl font-semibold text-heading">{{ $title }}</h3>
+    <h3 class="mb-4 text-2xl font-semibold">{{ $title }}</h3>
 
     @if ($description)
         <p class="font-light text-body sm:text-lg">{{ $description }}</p>
     @endif
 
     <div class="flex justify-center items-baseline my-8">
-        <span class="mr-2 text-5xl font-extrabold text-heading">{{ $currency }}{{ $price }}</span>
+        <span class="mr-2 text-5xl font-extrabold">{{ $currency }}{{ $price }}</span>
         @if ($period)
-            <span class="text-body-subtle">{{ $period }}</span>
+            <span class="text-body">{{ $period }}</span>
         @endif
     </div>
 
@@ -19,6 +19,6 @@
     @if (isset($footer))
         {{ $footer }}
     @elseif ($buttonText)
-        <x-fwb.button :href="$buttonHref" :color="$buttonColor" class="w-full">{{ $buttonText }}</x-fwb.button>
+        <x-fwb.button :href="$buttonHref" :color="$buttonColor" class="w-full justify-center">{{ $buttonText }}</x-fwb.button>
     @endif
 </div>

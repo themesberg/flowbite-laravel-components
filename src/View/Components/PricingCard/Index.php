@@ -19,7 +19,7 @@ class Index extends Component
 
     public function baseClasses(): string
     {
-        return 'flex flex-col p-6 mx-auto max-w-lg text-center bg-neutral-primary-soft border border-default rounded-base shadow-xs';
+        return 'flex flex-col p-6 mx-auto max-w-lg text-center text-heading bg-neutral-primary-soft border border-default rounded-base shadow-xs xl:p-8';
     }
 
     public function render()

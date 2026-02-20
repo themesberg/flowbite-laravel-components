@@ -43,6 +43,8 @@ class FlowbiteBladeServiceProvider extends ServiceProvider
             'button' => Components\Button::class,
             'button.group' => Components\Button\Group::class,
             'card' => Components\Card::class,
+            'pricing-card' => Components\PricingCard\Index::class,
+            'pricing-card.feature' => Components\PricingCard\Feature::class,
             'spinner' => Components\Spinner::class,
             'progress' => Components\Progress::class,
             'rating' => Components\Rating::class,

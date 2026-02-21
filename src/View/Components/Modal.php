@@ -11,6 +11,8 @@ class Modal extends Component
 
     public string $sizeClass;
 
+    public string $positionClass;
+
     public function __construct(
         public string $size = 'md',
         public string $position = 'center',
@@ -25,6 +27,17 @@ class Modal extends Component
             'lg' => 'max-w-4xl',
             'xl' => 'max-w-7xl',
             default => 'max-w-lg',
+        };
+        $this->positionClass = match ($this->position) {
+            'top-left' => 'justify-start items-start',
+            'top-center' => 'justify-center items-start',
+            'top-right' => 'justify-end items-start',
+            'center-left' => 'justify-start items-center',
+            'center-right' => 'justify-end items-center',
+            'bottom-left' => 'justify-start items-end',
+            'bottom-center' => 'justify-center items-end',
+            'bottom-right' => 'justify-end items-end',
+            default => 'justify-center items-center',
         };
     }
 

@@ -1,12 +1,12 @@
 <div class="{{ $wrapperClass() }}" {{ $attributes }}>
-    @if($caption ?? false)
-    <caption class="p-5 text-lg font-semibold text-left rtl:text-right text-heading bg-neutral-primary-soft">
-        {{ $caption }}
-    </caption>
-    @endif
     <table class="{{ $tableClass() }}">
+        @if($caption ?? false)
+        <caption class="p-5 text-lg font-medium text-left rtl:text-right text-heading">
+            {{ $caption }}
+        </caption>
+        @endif
         @if($head ?? false)
-        <thead class="text-xs text-heading uppercase bg-neutral-secondary-soft">
+        <thead class="text-sm text-body bg-neutral-secondary-soft border-b border-default">
             {{ $head }}
         </thead>
         @endif

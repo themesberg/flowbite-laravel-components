@@ -15,17 +15,19 @@ class Index extends Component
 
     public function tableClass(): string
     {
-        $classes = ['w-full text-sm text-left rtl:text-right text-body'];
-
-        return implode(' ', $classes);
+        return 'w-full text-sm text-left rtl:text-right text-body';
     }
 
     public function wrapperClass(): string
     {
-        $classes = ['relative overflow-x-auto sm:rounded-base'];
+        $classes = ['relative overflow-x-auto rounded-base'];
+
+        if (! $this->noborder) {
+            $classes[] = 'border border-default';
+        }
 
         if ($this->shadow) {
-            $classes[] = 'shadow-md';
+            $classes[] = 'shadow-xs';
         }
 
         return implode(' ', $classes);

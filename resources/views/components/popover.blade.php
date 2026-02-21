@@ -1,5 +1,5 @@
 <div {{ $attributes }}>
-    <div data-popover-target="{{ $id }}" data-popover-trigger="{{ $triggerType }}" data-popover-placement="{{ $placement }}" @if($offset) data-popover-offset="{{ $offset }}" @endif>
+    <div class="inline-flex" data-popover-target="{{ $id }}" data-popover-trigger="{{ $triggerType }}" data-popover-placement="{{ $placement }}" @if($offset) data-popover-offset="{{ $offset }}" @endif>
         {{ $triggerSlot ?? '' }}
     </div>
     <div data-popover id="{{ $id }}" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-body transition-opacity duration-300 bg-neutral-primary-soft border border-default rounded-base shadow-sm opacity-0">

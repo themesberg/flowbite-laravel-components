@@ -8,16 +8,8 @@ class Cell extends Component
 {
     public function __construct(
         public bool $header = false,
+        public bool $rowHeader = false,
     ) {}
-
-    public function cellClass(): string
-    {
-        if ($this->header) {
-            return 'px-6 py-3';
-        }
-
-        return 'px-6 py-4';
-    }
 
     public function render()
     {

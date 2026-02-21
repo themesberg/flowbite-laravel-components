@@ -1,11 +1,13 @@
 @props([
-    'title' => 'Filter options',
+    'title' => '',
     'id' => 'filter-drawer',
 ])
 
 <div id="{{ $id }}" {{ $attributes->merge(['class' => 'fixed top-0 left-0 z-40 w-64 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white dark:bg-gray-800']) }} tabindex="-1" aria-labelledby="{{ $id }}-label">
     <div class="flex items-center justify-between mb-4">
+        @if ($title)
         <h5 id="{{ $id }}-label" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">{{ $title }}</h5>
+        @endif
         <button type="button" data-drawer-hide="{{ $id }}" aria-controls="{{ $id }}" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white">
             <x-fwb-o-close class="w-3 h-3" />
             <span class="sr-only">Close drawer</span>

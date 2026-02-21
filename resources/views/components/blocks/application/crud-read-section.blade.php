@@ -1,10 +1,12 @@
 @props([
-    'title' => 'Item Details',
+    'title' => '',
 ])
 
 <section {{ $attributes->merge(['class' => 'bg-white dark:bg-gray-900']) }}>
     <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
+        @if ($title)
         <h2 class="mb-2 text-xl font-semibold leading-none text-gray-900 md:text-2xl dark:text-white">{{ $title }}</h2>
+        @endif
         @if($slot->isEmpty())
             <dl>
                 <dt class="mb-2 font-semibold leading-none text-gray-900 dark:text-white">Name</dt>

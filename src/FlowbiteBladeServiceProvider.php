@@ -132,12 +132,27 @@ class FlowbiteBladeServiceProvider extends ServiceProvider
             if (! is_dir($categoryPath)) {
                 continue;
             }
+
+            // Register flat blade files
             foreach (glob($categoryPath . '/*.blade.php') as $file) {
                 $name = basename($file, '.blade.php');
                 Blade::component(
                     "flowbite-blade::components.blocks.{$category}.{$name}",
                     "{$prefix}.blocks.{$category}.{$name}"
                 );
+            }
+
+            // Register subdirectory blade files (for composition sub-components)
+            foreach (glob($categoryPath . '/*', GLOB_ONLYDIR) as $subDir) {
+                $subName = basename($subDir);
+                foreach (glob($subDir . '/*.blade.php') as $file) {
+                    $fileName = basename($file, '.blade.php');
+                    $alias = $fileName === 'index' ? $subName : "{$subName}.{$fileName}";
+                    Blade::component(
+                        "flowbite-blade::components.blocks.{$category}.{$subName}.{$fileName}",
+                        "{$prefix}.blocks.{$category}.{$alias}"
+                    );
+                }
             }
         }
     }

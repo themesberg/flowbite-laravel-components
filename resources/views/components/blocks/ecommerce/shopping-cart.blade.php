@@ -1,10 +1,12 @@
 @props([
-    'title' => 'Shopping Cart',
+    'title' => '',
 ])
 
 <section {{ $attributes->merge(['class' => 'bg-white py-8 antialiased dark:bg-gray-900 md:py-16']) }}>
     <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
-        <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">{{ $title }}</h2>
+        @if ($title)
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">{{ $title }}</h2>
+        @endif
 
         <div class="mt-6 sm:mt-8 md:gap-6 lg:flex lg:items-start xl:gap-8">
             {{-- Cart items --}}

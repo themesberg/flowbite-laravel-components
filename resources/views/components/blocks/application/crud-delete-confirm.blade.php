@@ -1,6 +1,6 @@
 @props([
-    'title' => 'Are you sure?',
-    'message' => 'Are you sure you want to delete this item? This action cannot be undone.',
+    'title' => '',
+    'message' => '',
     'id' => 'delete-modal',
     'action' => '#',
 ])
@@ -14,7 +14,9 @@
                 <span class="sr-only">Close modal</span>
             </button>
             <x-fwb-o-trash-bin class="text-gray-400 dark:text-gray-500 w-11 h-11 mb-3.5 mx-auto" />
+            @if ($message)
             <p class="mb-4 text-gray-500 dark:text-gray-300">{{ $message }}</p>
+            @endif
             @if(isset($actions))
                 {{ $actions }}
             @else

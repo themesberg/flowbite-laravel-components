@@ -1,19 +1,25 @@
 @props([
-    'title' => 'Shop by category',
+    'title' => '',
     'seeMoreHref' => '#',
-    'seeMoreText' => 'See more categories',
+    'seeMoreText' => '',
 ])
 
 <section {{ $attributes->merge(['class' => 'bg-gray-50 py-8 antialiased dark:bg-gray-900 md:py-16']) }}>
     <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
-        <div class="mb-4 flex items-center justify-between gap-4 md:mb-8">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">{{ $title }}</h2>
+        @if ($title || $seeMoreText)
+            <div class="mb-4 flex items-center justify-between gap-4 md:mb-8">
+                @if ($title)
+                    <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">{{ $title }}</h2>
+                @endif
 
-            <a href="{{ $seeMoreHref }}" title="" class="flex items-center text-base font-medium text-blue-700 hover:underline dark:text-blue-500">
-                {{ $seeMoreText }}
-                <x-fwb-o-arrow-right class="ms-1 h-5 w-5" />
-            </a>
-        </div>
+                @if ($seeMoreText)
+                    <a href="{{ $seeMoreHref }}" title="" class="flex items-center text-base font-medium text-blue-700 hover:underline dark:text-blue-500">
+                        {{ $seeMoreText }}
+                        <x-fwb-o-arrow-right class="ms-1 h-5 w-5" />
+                    </a>
+                @endif
+            </div>
+        @endif
 
         @if($slot->isEmpty())
             <div class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">

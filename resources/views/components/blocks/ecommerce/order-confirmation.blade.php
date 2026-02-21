@@ -1,13 +1,17 @@
 @props([
-    'title' => 'Thanks for your order!',
-    'orderId' => '#7564804',
-    'message' => 'Your order will be processed within 24 hours during working days. We will notify you by email once your order has been shipped.',
+    'title' => '',
+    'orderId' => '',
+    'message' => '',
 ])
 
 <section {{ $attributes->merge(['class' => 'bg-white py-8 antialiased dark:bg-gray-900 md:py-16']) }}>
     <div class="mx-auto max-w-2xl px-4 2xl:px-0">
-        <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl mb-2">{{ $title }}</h2>
-        <p class="text-gray-500 dark:text-gray-400 mb-6 md:mb-8">Your order <a href="#" class="font-medium text-gray-900 dark:text-white hover:underline">{{ $orderId }}</a> {{ $message }}</p>
+        @if ($title)
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl mb-2">{{ $title }}</h2>
+        @endif
+        @if ($orderId || $message)
+            <p class="text-gray-500 dark:text-gray-400 mb-6 md:mb-8">@if ($orderId)Your order <a href="#" class="font-medium text-gray-900 dark:text-white hover:underline">{{ $orderId }}</a> @endif{{ $message }}</p>
+        @endif
 
         @if(isset($details))
             {{ $details }}

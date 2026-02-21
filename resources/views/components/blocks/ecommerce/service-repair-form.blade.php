@@ -1,5 +1,5 @@
 @props([
-    'title' => 'Service reparation form',
+    'title' => '',
     'action' => '#',
 ])
 
@@ -32,7 +32,9 @@
             </nav>
         @endif
 
-        <h2 class="mb-4 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl md:mb-6">{{ $title }}</h2>
+        @if ($title)
+            <h2 class="mb-4 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl md:mb-6">{{ $title }}</h2>
+        @endif
 
         <form action="{{ $action }}" class="w-full space-y-6 lg:space-y-8">
             @if(isset($steps))

@@ -1,5 +1,5 @@
 @props([
-    'title' => 'Delivery Details',
+    'title' => '',
     'action' => '#',
 ])
 
@@ -36,7 +36,9 @@
                     {{ $form }}
                 @else
                     <div class="space-y-4">
-                        <h2 class="text-xl font-semibold text-gray-900 dark:text-white">{{ $title }}</h2>
+                        @if ($title)
+                            <h2 class="text-xl font-semibold text-gray-900 dark:text-white">{{ $title }}</h2>
+                        @endif
 
                         <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                             <div>

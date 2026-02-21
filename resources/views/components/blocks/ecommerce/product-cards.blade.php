@@ -1,10 +1,12 @@
 @props([
-    'title' => 'Products',
+    'title' => '',
 ])
 
 <section {{ $attributes->merge(['class' => 'bg-white py-8 antialiased dark:bg-gray-900 md:py-16']) }}>
     <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
-        <h2 class="mb-6 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl md:mb-8">{{ $title }}</h2>
+        @if ($title)
+            <h2 class="mb-6 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl md:mb-8">{{ $title }}</h2>
+        @endif
 
         @if($slot->isEmpty())
             <div class="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">

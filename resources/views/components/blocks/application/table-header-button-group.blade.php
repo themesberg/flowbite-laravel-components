@@ -1,6 +1,6 @@
 @props([
-    'title' => 'All Products',
-    'searchPlaceholder' => 'Search',
+    'title' => '',
+    'searchPlaceholder' => '',
 ])
 
 <div {{ $attributes->merge(['class' => 'bg-white dark:bg-gray-800 relative shadow-md sm:rounded-lg overflow-hidden']) }}>

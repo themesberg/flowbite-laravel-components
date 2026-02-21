@@ -1,40 +1,48 @@
 @props([
-    'title' => 'Reviews',
-    'averageRating' => '4.65',
+    'title' => '',
+    'averageRating' => '',
 ])
 
 <section {{ $attributes->merge(['class' => 'bg-white py-8 antialiased dark:bg-gray-900 md:py-16']) }}>
     <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
-        <div class="flex items-center gap-2">
-            <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">{{ $title }}</h2>
-            <div class="mt-2 flex items-center gap-2 sm:mt-0">
-                <div class="flex items-center gap-0.5">
-                    @php
-                        $fullStars = floor((float)$averageRating);
-                        $hasHalfStar = ((float)$averageRating - $fullStars) >= 0.5;
-                    @endphp
-                    @for($i = 0; $i < $fullStars; $i++)
-                        <x-fwb-s-star class="h-4 w-4 text-yellow-300" />
-                    @endfor
-                    @for($i = $fullStars + ($hasHalfStar ? 1 : 0); $i < 5; $i++)
-                        <x-fwb-s-star class="h-4 w-4 text-gray-300 dark:text-gray-600" />
-                    @endfor
-                </div>
-                <p class="text-sm font-medium leading-none text-gray-500 dark:text-gray-400">({{ $averageRating }})</p>
-                @if(isset($reviewCount))
-                    {{ $reviewCount }}
-                @else
-                    <a href="#" class="text-sm font-medium leading-none text-gray-900 underline hover:no-underline dark:text-white">645 Reviews</a>
+        @if ($title || $averageRating)
+            <div class="flex items-center gap-2">
+                @if ($title)
+                    <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">{{ $title }}</h2>
+                @endif
+                @if ($averageRating)
+                    <div class="mt-2 flex items-center gap-2 sm:mt-0">
+                        <div class="flex items-center gap-0.5">
+                            @php
+                                $fullStars = floor((float)$averageRating);
+                                $hasHalfStar = ((float)$averageRating - $fullStars) >= 0.5;
+                            @endphp
+                            @for($i = 0; $i < $fullStars; $i++)
+                                <x-fwb-s-star class="h-4 w-4 text-yellow-300" />
+                            @endfor
+                            @for($i = $fullStars + ($hasHalfStar ? 1 : 0); $i < 5; $i++)
+                                <x-fwb-s-star class="h-4 w-4 text-gray-300 dark:text-gray-600" />
+                            @endfor
+                        </div>
+                        <p class="text-sm font-medium leading-none text-gray-500 dark:text-gray-400">({{ $averageRating }})</p>
+                        @if(isset($reviewCount))
+                            {{ $reviewCount }}
+                        @else
+                            <a href="#" class="text-sm font-medium leading-none text-gray-900 underline hover:no-underline dark:text-white">645 Reviews</a>
+                        @endif
+                    </div>
                 @endif
             </div>
-        </div>
+        @endif
 
         <div class="my-6 gap-8 sm:flex sm:items-start md:my-8">
             @if(isset($ratingSummary))
                 {{ $ratingSummary }}
             @else
                 <div class="shrink-0 space-y-4">
-                    <p class="text-2xl font-semibold leading-none text-gray-900 dark:text-white">{{ $averageRating }} out of 5</p>
+                    @if ($averageRating)
+                        <p class="text-2xl font-semibold leading-none text-gray-900 dark:text-white">{{ $averageRating }} out of 5</p>
+                    @endif
                     <button type="button" data-modal-target="review-modal" data-modal-toggle="review-modal" class="mb-2 me-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Write a review</button>
                 </div>
             @endif

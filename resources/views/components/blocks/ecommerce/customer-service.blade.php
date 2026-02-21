@@ -1,5 +1,5 @@
 @props([
-    'title' => 'Questions',
+    'title' => '',
     'description' => '',
     'count' => null,
 ])
@@ -7,9 +7,11 @@
 <section {{ $attributes->merge(['class' => 'bg-white py-8 antialiased dark:bg-gray-900 md:py-16']) }}>
     <div class="mx-auto max-w-screen-lg px-4 2xl:px-0">
         <div class="lg:flex lg:items-center lg:justify-between lg:gap-4">
-            <h2 class="shrink-0 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
-                {{ $title }}@if($count) ({{ $count }})@endif
-            </h2>
+            @if ($title)
+                <h2 class="shrink-0 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
+                    {{ $title }}@if($count) ({{ $count }})@endif
+                </h2>
+            @endif
 
             @if($description)
                 <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 lg:mt-0">{{ $description }}</p>

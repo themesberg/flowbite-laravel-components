@@ -1,13 +1,15 @@
 @props([
     'brandName' => 'Flowbite',
     'brandHref' => '/',
-    'copyright' => '&copy; ' . date('Y') . ' Flowbite&trade;. All Rights Reserved.',
+    'copyright' => '',
 ])
 
 <footer {{ $attributes->merge(['class' => 'bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 p-4']) }}>
+    @if ($copyright)
     <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
         {!! $copyright !!}
     </span>
+    @endif
     <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
         @if(isset($links))
             {{ $links }}

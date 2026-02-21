@@ -1,6 +1,6 @@
 @props([
-    'title' => 'Successfully completed',
-    'message' => 'Your action has been completed successfully.',
+    'title' => '',
+    'message' => '',
 ])
 
 <div {{ $attributes->merge(['class' => 'p-4 w-full max-w-md']) }} role="alert">
@@ -9,8 +9,12 @@
             <x-fwb-o-check class="w-8 h-8 text-green-500 dark:text-green-400" />
             <span class="sr-only">Success</span>
         </div>
+        @if ($title)
         <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">{{ $title }}</h3>
+        @endif
+        @if ($message)
         <p class="mb-4 text-sm font-normal text-gray-500 dark:text-gray-400">{{ $message }}</p>
+        @endif
 
         @if(isset($actions))
             <div class="flex justify-center items-center space-x-4">

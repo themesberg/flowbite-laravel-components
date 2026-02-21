@@ -1,17 +1,19 @@
 @props([
-    'title' => 'Status for your refund request',
+    'title' => '',
     'refundId' => '',
 ])
 
 <section {{ $attributes->merge(['class' => 'bg-white py-8 antialiased dark:bg-gray-900 md:py-16']) }}>
     <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
         <div class="mx-auto max-w-3xl space-y-6 sm:space-y-8">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
-                {{ $title }}
-                @if($refundId)
-                    <span class="text-gray-500 dark:text-gray-400">({{ $refundId }})</span>
-                @endif
-            </h2>
+            @if ($title || $refundId)
+                <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
+                    {{ $title }}
+                    @if($refundId)
+                        <span class="text-gray-500 dark:text-gray-400">({{ $refundId }})</span>
+                    @endif
+                </h2>
+            @endif
 
             @if(isset($product))
                 {{ $product }}

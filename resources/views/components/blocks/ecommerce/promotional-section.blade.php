@@ -1,6 +1,6 @@
 @props([
-    'title' => 'Save $500 today on your purchase of a new iMac computer.',
-    'description' => 'Reserve your new Apple iMac 27" today and enjoy exclusive savings with qualified activation. Pre-order now to secure your discount.',
+    'title' => '',
+    'description' => '',
 ])
 
 <section {{ $attributes->merge(['class' => 'bg-white px-4 py-8 antialiased dark:bg-gray-900 md:py-16']) }}>
@@ -19,9 +19,11 @@
         @endif
 
         <div class="me-auto place-self-center lg:col-span-7">
-            <h1 class="mb-3 text-2xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white md:text-4xl">
-                {{ $title }}
-            </h1>
+            @if ($title)
+                <h1 class="mb-3 text-2xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white md:text-4xl">
+                    {{ $title }}
+                </h1>
+            @endif
             @if($description)
                 <p class="mb-6 text-gray-500 dark:text-gray-400">{{ $description }}</p>
             @endif

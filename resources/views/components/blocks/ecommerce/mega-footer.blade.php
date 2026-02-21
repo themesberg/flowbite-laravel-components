@@ -1,6 +1,6 @@
 @props([
     'brandName' => 'Flowbite',
-    'copyright' => '© ' . date('Y') . ' ' . 'Flowbite™' . '. All Rights Reserved.',
+    'copyright' => '',
 ])
 
 <footer {{ $attributes->merge(['class' => 'bg-white p-4 dark:bg-gray-800 md:p-8 lg:p-10']) }}>
@@ -72,6 +72,8 @@
             </div>
         @endif
 
-        <span class="text-sm text-gray-500 dark:text-gray-400 sm:text-center">{!! $copyright !!}</span>
+        @if ($copyright)
+            <span class="text-sm text-gray-500 dark:text-gray-400 sm:text-center">{!! $copyright !!}</span>
+        @endif
     </div>
 </footer>

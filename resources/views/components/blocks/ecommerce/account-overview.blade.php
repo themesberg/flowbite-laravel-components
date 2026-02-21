@@ -1,5 +1,5 @@
 @props([
-    'title' => 'Account overview',
+    'title' => '',
 ])
 
 <section {{ $attributes->merge(['class' => 'bg-white py-8 antialiased dark:bg-gray-900 md:py-8']) }}>
@@ -31,7 +31,9 @@
             </nav>
         @endif
 
-        <h2 class="mb-4 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">{{ $title }}</h2>
+        @if ($title)
+            <h2 class="mb-4 text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">{{ $title }}</h2>
+        @endif
 
         @if($slot->isEmpty())
             <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

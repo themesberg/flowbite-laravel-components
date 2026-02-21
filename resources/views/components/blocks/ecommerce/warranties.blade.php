@@ -1,5 +1,5 @@
 @props([
-    'title' => 'My warranties',
+    'title' => '',
     'description' => '',
 ])
 
@@ -7,7 +7,9 @@
     <div class="mx-auto max-w-screen-xl px-4 2xl:px-0">
         <div class="mx-auto max-w-5xl">
             <div class="gap-4 sm:flex sm:items-center sm:justify-between">
-                <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">{{ $title }}</h2>
+                @if ($title)
+                    <h2 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">{{ $title }}</h2>
+                @endif
 
                 @if($description)
                     <p class="mt-2 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">{{ $description }}</p>

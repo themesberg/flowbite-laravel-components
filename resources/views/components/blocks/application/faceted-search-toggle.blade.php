@@ -1,9 +1,10 @@
 @props([
-    'title' => 'Filter products',
+    'title' => '',
 ])
 
 <div {{ $attributes->merge(['class' => 'bg-white dark:bg-gray-900']) }}>
     <div class="py-4 px-4 mx-auto max-w-screen-xl lg:px-6">
+        @if ($title)
         <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-4">
             <h2 class="text-lg font-semibold text-gray-900 dark:text-white">{{ $title }}</h2>
             <button type="button" data-collapse-toggle="filter-toggle-panel" class="inline-flex items-center text-sm font-medium text-blue-700 hover:underline dark:text-blue-500">
@@ -11,6 +12,7 @@
                 Toggle filters
             </button>
         </div>
+        @endif
 
         <div id="filter-toggle-panel" class="hidden">
             {{ $slot }}

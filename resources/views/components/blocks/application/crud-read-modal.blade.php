@@ -1,5 +1,5 @@
 @props([
-    'title' => 'Item Details',
+    'title' => '',
     'id' => 'read-modal',
 ])
 
@@ -8,6 +8,7 @@
         <!-- Modal content -->
         <div class="relative p-4 bg-white rounded-lg shadow dark:bg-gray-800 sm:p-5">
             <!-- Modal header -->
+            @if ($title)
             <div class="flex justify-between mb-4 rounded-t sm:mb-5">
                 <div class="text-lg text-gray-900 md:text-xl dark:text-white">
                     <h3 class="font-semibold">{{ $title }}</h3>
@@ -19,6 +20,7 @@
                     </button>
                 </div>
             </div>
+            @endif
             <!-- Modal body -->
             @if($slot->isEmpty())
                 <dl>

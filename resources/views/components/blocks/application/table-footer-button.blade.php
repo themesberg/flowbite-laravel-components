@@ -1,15 +1,17 @@
 @props([
-    'showing' => '1-10',
-    'total' => '1000',
+    'showing' => '',
+    'total' => '',
 ])
 
 <nav {{ $attributes->merge(['class' => 'flex flex-col md:flex-row justify-between items-start md:items-center space-y-3 md:space-y-0 p-4']) }} aria-label="Table navigation">
+    @if ($showing || $total)
     <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
         Showing
         <span class="font-semibold text-gray-900 dark:text-white">{{ $showing }}</span>
         of
         <span class="font-semibold text-gray-900 dark:text-white">{{ $total }}</span>
     </span>
+    @endif
     @if(isset($buttons))
         {{ $buttons }}
     @else

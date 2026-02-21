@@ -1,6 +1,6 @@
 @props([
-    'title' => 'Product Title',
-    'price' => '$0.00',
+    'title' => '',
+    'price' => '',
     'description' => '',
 ])
 
@@ -19,13 +19,17 @@
             @endif
 
             <div class="mt-6 sm:mt-8 lg:mt-0">
-                <h1 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
-                    {{ $title }}
-                </h1>
+                @if ($title)
+                    <h1 class="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl">
+                        {{ $title }}
+                    </h1>
+                @endif
                 <div class="mt-4 sm:items-center sm:gap-4 sm:flex">
-                    <p class="text-2xl font-extrabold text-gray-900 dark:text-white sm:text-3xl">
-                        {{ $price }}
-                    </p>
+                    @if ($price)
+                        <p class="text-2xl font-extrabold text-gray-900 dark:text-white sm:text-3xl">
+                            {{ $price }}
+                        </p>
+                    @endif
 
                     <div class="mt-2 flex items-center gap-2 sm:mt-0">
                         <div class="flex items-center gap-1">

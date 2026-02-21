@@ -1,11 +1,13 @@
 @props([
-    'title' => 'Update product',
+    'title' => '',
     'action' => '#',
 ])
 
 <section {{ $attributes->merge(['class' => 'bg-white dark:bg-gray-900']) }}>
     <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
+        @if ($title)
         <h2 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">{{ $title }}</h2>
+        @endif
         <form action="{{ $action }}" method="POST">
             @csrf
             @method('PUT')

@@ -24,7 +24,7 @@
             @break
         @case('video')
             <div class="flex items-center justify-center w-full h-48 bg-neutral-tertiary-medium rounded-sm">
-                <x-fwb-s-file-video class="w-10 h-10 text-neutral-tertiary" />
+                <x-fwb-o-file-video class="w-10 h-10 text-neutral-tertiary" />
             </div>
             @break
         @case('list')

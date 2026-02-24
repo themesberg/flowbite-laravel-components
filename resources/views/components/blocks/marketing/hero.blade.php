@@ -20,7 +20,7 @@
                 <x-fwb-o-chevron-right class="ml-2 w-5 h-5" />
             </a>
         @endif
-        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">{{ $title }}</h1>
+        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">{{ $title }}</h1>
         <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">{{ $description }}</p>
         @if(isset($actions))
             {{ $actions }}

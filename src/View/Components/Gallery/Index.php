@@ -1,10 +1,10 @@
 <?php
 
-namespace Themesberg\FlowbiteBlade\View\Components;
+namespace Themesberg\FlowbiteBlade\View\Components\Gallery;
 
 use Illuminate\View\Component;
 
-class Gallery extends Component
+class Index extends Component
 {
     public function __construct(
         public int $grid = 3,
@@ -23,6 +23,6 @@ class Gallery extends Component
 
     public function render()
     {
-        return view('flowbite-blade::components.gallery');
+        return view('flowbite-blade::components.gallery.index');
     }
 }

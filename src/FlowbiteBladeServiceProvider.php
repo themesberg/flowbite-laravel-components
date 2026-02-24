@@ -85,7 +85,8 @@ class FlowbiteBladeServiceProvider extends ServiceProvider
             'timeline' => Components\Timeline\Index::class,
             'timeline.item' => Components\Timeline\Item::class,
             'carousel' => Components\Carousel::class,
-            'gallery' => Components\Gallery::class,
+            'gallery' => Components\Gallery\Index::class,
+            'gallery.image' => Components\Gallery\Image::class,
             'skeleton' => Components\Skeleton::class,
             'chat-bubble' => Components\ChatBubble::class,
 

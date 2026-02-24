@@ -1,5 +1,5 @@
 {
-    "name": "themesberg/flowbite-blade",
+    "name": "themesberg/flowbite-laravel-components",
     "description": "Flowbite UI components for Laravel Blade",
     "keywords": ["laravel", "blade", "flowbite", "tailwindcss", "components"],
     "license": "MIT",

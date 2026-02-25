@@ -10,6 +10,14 @@ Laravel Blade components for [Flowbite](https://flowbite.com). 60+ UI components
 composer require themesberg/flowbite-laravel-components
 ```
 
+Or get started even faster with the [Flowbite Laravel Starter Kit](https://github.com/themesberg/flowbite-laravel-starter-kit) which includes authentication, layouts, dark mode, and everything pre-configured:
+
+```bash
+laravel new my-app --using=themesberg/flowbite-laravel-starter-kit
+```
+
+### Manual setup
+
 Add the Flowbite theme and plugin to your `resources/css/app.css`:
 
 ```css

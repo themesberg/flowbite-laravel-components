@@ -58,7 +58,7 @@
                                 <dt class="text-base font-medium text-gray-500 dark:text-gray-400">Date:</dt>
                                 <dd class="mt-1.5 text-base font-semibold text-gray-900 dark:text-white">
                                     <div class="flex items-center gap-1.5">
-                                        <x-fwb-o-calendar class="h-4 w-4 text-gray-400" />
+                                        <x-fwb-o-calendar-month class="h-4 w-4 text-gray-400" />
                                         24.12.2023
                                     </div>
                                 </dd>
@@ -95,7 +95,7 @@
                                 <dt class="text-base font-medium text-gray-500 dark:text-gray-400">Date:</dt>
                                 <dd class="mt-1.5 text-base font-semibold text-gray-900 dark:text-white">
                                     <div class="flex items-center gap-1.5">
-                                        <x-fwb-o-calendar class="h-4 w-4 text-gray-400" />
+                                        <x-fwb-o-calendar-month class="h-4 w-4 text-gray-400" />
                                         15.11.2023
                                     </div>
                                 </dd>
@@ -132,7 +132,7 @@
                                 <dt class="text-base font-medium text-gray-500 dark:text-gray-400">Date:</dt>
                                 <dd class="mt-1.5 text-base font-semibold text-gray-900 dark:text-white">
                                     <div class="flex items-center gap-1.5">
-                                        <x-fwb-o-calendar class="h-4 w-4 text-gray-400" />
+                                        <x-fwb-o-calendar-month class="h-4 w-4 text-gray-400" />
                                         02.10.2023
                                     </div>
                                 </dd>

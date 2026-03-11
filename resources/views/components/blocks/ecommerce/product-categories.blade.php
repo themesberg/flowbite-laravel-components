@@ -59,7 +59,7 @@
                 </a>
 
                 <a href="#" class="flex items-center rounded-lg border border-gray-200 bg-white px-4 py-2 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                    <x-fwb-o-headphone class="me-2 h-4 w-4 shrink-0 text-gray-900 dark:text-white" />
+                    <x-fwb-o-headphones class="me-2 h-4 w-4 shrink-0 text-gray-900 dark:text-white" />
                     <span class="text-sm font-medium text-gray-900 dark:text-white">Health & Beauty</span>
                 </a>
             </div>
